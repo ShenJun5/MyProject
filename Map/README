@@ -1,0 +1,9 @@
+### Map
+
+This is a web map project which uses Folium library.
+
+It has 2 layers:
+one layer of all the volcanoes in United States -- all marked with its elevation & differentiate with color based on elevation;
+and one layer of the population in every country -- color is also used to differentiate the different population group.
+
+It also has a LayerControl panel on the upper right which you can turn off/on either layer.
