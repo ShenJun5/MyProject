@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')%>
+
+<h1 class="mb-3">Can you help me with...</h1>
+<div class="mb-3">
+    <a href="/blogs/new" class="btn btn-sm btn-outline-secondary font-weight-bold"><img src="https://img.icons8.com/ios/32/000000/dog-paw-print.png"/>  I need help</a>
+</div>
+<% for (let blog of blogs){%>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <%if(blog.images.length) {%>
+            <img class="img-fluid" alt="" src="<%=blog.images[0].url%>">
+            <% }else {%>
+            <img class="img-fluid" alt=""
+                src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+            <% } %>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= blog.title %> </h5>
+                <p class="card-text"><%= blog.description %></p>
+                <p class="card-text">
+                    <small class="text-muted"><%= blog.location%></small>
+                </p>
+                <a class="btn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>
